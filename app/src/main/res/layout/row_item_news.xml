@@ -30,7 +30,6 @@
                 android:id="@+id/img_news"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:contentDescription="@string/txt_image_news"
                 android:scaleType="centerCrop"
                 android:src="@drawable/img1"/>
 
