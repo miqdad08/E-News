@@ -13,6 +13,7 @@
         android:layout_margin="20dp"
         android:text="Top News"
         android:textColor="@color/black"
+        android:fontFamily="@font/poppins_font"
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
