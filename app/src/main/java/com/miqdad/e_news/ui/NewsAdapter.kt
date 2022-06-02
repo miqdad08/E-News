@@ -9,6 +9,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import com.miqdad.e_news.data.network.ArticlesItem
 import com.miqdad.e_news.databinding.RowItemNewsBinding
+import com.miqdad.e_news.helper.HelperFunction
 
 class NewsAdapter : RecyclerView.Adapter<NewsAdapter.MyViewHolder>() {
     private var listNews = ArrayList<ArticlesItem>()
@@ -35,8 +36,9 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.MyViewHolder>() {
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val data = listNews[position]
         holder.binding.apply {
+            var date = HelperFunction().dateFormatter(data.publishedAt!!)
             tvTitle.text = data.title
-            tvTime.text = data.publishedAt
+            tvTime.text = date
             Glide.with(imgNews.context)
                 .load(data.urlToImage)
                 .apply(RequestOptions())
