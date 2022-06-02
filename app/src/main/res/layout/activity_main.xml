@@ -24,6 +24,7 @@
             android:layout_gravity="center"
             android:background="@color/black"
             app:labelVisibilityMode="unlabeled"
+            app:itemIconTint="@color/white"
             app:menu="@menu/menu" />
     </com.google.android.material.card.MaterialCardView>
 
