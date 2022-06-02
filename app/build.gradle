@@ -73,6 +73,9 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.13.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.13.0'
 
+    // Carousel
+    implementation 'com.synnapps:carouselview:0.1.5'
+
     // SlidingUpPanel
     implementation 'com.sothree.slidinguppanel:library:3.4.0'
     implementation "androidx.multidex:multidex:2.0.1"
