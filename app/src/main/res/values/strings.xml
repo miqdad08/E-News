@@ -14,4 +14,10 @@
     <string name="txt_discover">Discover</string>
     <string name="txt_news_all_around_the_world">News all around the world</string>
     <string name="txt_categories">Categories</string>
+    <string name="txt_today_news">Today News</string>
+    <string name="txt_top_news">Top News</string>
+    <string name="txt_title">title</string>
+    <string name="txt_time">time</string>
+    <string name="txt_author">author</string>
+    <string name="txt_image_news">Image News</string>
 </resources>

@@ -38,14 +38,14 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-
         </com.google.android.material.card.MaterialCardView>
 
         <TextView
             android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="title"
+            android:text="@string/txt_title"
+            android:fontFamily="@font/poppins_bold"
             android:maxLines="2"
             android:ellipsize="end"
             android:textSize="20sp"
@@ -59,7 +59,8 @@
             android:id="@+id/tv_time"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="time"
+            android:text="@string/txt_time"
+            android:fontFamily="@font/poppins_medium"
             android:textSize="15sp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
@@ -70,14 +71,14 @@
             android:id="@+id/tv_author"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="author"
+            android:text="@string/txt_author"
+            android:fontFamily="@font/poppins_medium"
             android:textSize="15sp"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:paddingBottom="10dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_time"/>
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
