@@ -19,7 +19,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/view_pager_news"
         android:layout_width="match_parent"
