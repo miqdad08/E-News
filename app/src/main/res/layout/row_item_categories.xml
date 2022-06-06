@@ -82,11 +82,11 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintHorizontal_weight="3"
-            app:layout_constraintEnd_toStartOf="@id/tv_time"
+            app:layout_constraintEnd_toStartOf="@id/tv_author"
             app:layout_constraintStart_toStartOf="@id/guideline"/>
 
         <TextView
-            android:id="@+id/tv_time"
+            android:id="@+id/tv_author"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="4dp"
