@@ -10,7 +10,6 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.miqdad.e_news.data.network.ArticlesItem
-import com.miqdad.e_news.data.network.TopHeadlineResponse
 import com.miqdad.e_news.databinding.FragmentHomeBinding
 import com.miqdad.e_news.ui.NewsAdapter
 import com.miqdad.e_news.ui.OnItemClickCallback
@@ -62,6 +61,8 @@ class HomeFragment : Fragment() {
             })
         }
     }
+
+
 
     private fun showError(isError: Throwable?) {
         Log.e("MainActivity", "Error get data ${isError.toString()}")

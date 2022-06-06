@@ -1,4 +1,4 @@
-package com.miqdad.e_news.ui
+package com.miqdad.e_news.ui.search
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,13 +8,16 @@ import com.bumptech.glide.Priority
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import com.miqdad.e_news.data.network.ArticlesItem
+import com.miqdad.e_news.databinding.RowItemCategoriesBinding
 import com.miqdad.e_news.databinding.RowItemNewsBinding
 import com.miqdad.e_news.helper.HelperFunction
+import com.miqdad.e_news.ui.NewsAdapter
+import com.miqdad.e_news.ui.OnItemClickCallback
 
-class NewsAdapter : RecyclerView.Adapter<NewsAdapter.MyViewHolder>() {
+class SearchAdapter: RecyclerView.Adapter<SearchAdapter.MyViewHolder>() {
     private var listNews = ArrayList<ArticlesItem>()
 
-    fun setData(data: List<ArticlesItem>?) {
+    fun setDataSearch(data: List<ArticlesItem>?) {
         if (data == null) return
         listNews.clear()
         listNews.addAll(data)
@@ -26,11 +29,11 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.MyViewHolder>() {
         this.onItemClickCallback = onItemClickCallback
     }
 
-    class MyViewHolder(val binding: RowItemNewsBinding) :
+    class MyViewHolder(val binding: RowItemCategoriesBinding) :
         RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = MyViewHolder(
-        RowItemNewsBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        RowItemCategoriesBinding.inflate(LayoutInflater.from(parent.context), parent, false)
     )
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
@@ -38,7 +41,7 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.MyViewHolder>() {
         holder.binding.apply {
             var date = HelperFunction().dateFormatter(data.publishedAt!!)
             tvTitle.text = data.title
-            tvTime.text = date
+            tvDate.text = date
             tvAuthor.text = "By ${data.author}"
             Glide.with(imgNews.context)
                 .load(data.urlToImage)
