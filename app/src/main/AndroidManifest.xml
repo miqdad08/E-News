@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.miqdad.e_news">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -12,19 +12,26 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ENews">
         <activity
-            android:name=".ui.detail.DetailActivity"
-            android:exported="false"
-            android:label="@string/title_activity_detail"
-            android:theme="@style/Theme.ENews.NoActionBar" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="true">
+            android:name=".splash_screen.SplashScreenActivity"
+            android:exported="true"
+            android:theme="@style/SplashScreen">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".ui.detail.DetailActivity"
+            android:exported="false"
+            android:label="@string/title_activity_detail"
+            android:theme="@style/Theme.ENews.NoActionBar" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true" />
+
     </application>
 
 </manifest>
