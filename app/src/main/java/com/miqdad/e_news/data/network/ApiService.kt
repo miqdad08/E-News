@@ -18,4 +18,10 @@ interface ApiService {
         @Query("q") search : String,
         @Query("apiKey") api_key : String = API_KEY
     ): Flowable<TopHeadlineResponse>
+
+    @GET("top-headlines")
+    fun getCategory(
+        @Query("category") category : String,
+        @Query("apiKey") api_key : String = API_KEY
+    ): Flowable<TopHeadlineResponse>
 }
