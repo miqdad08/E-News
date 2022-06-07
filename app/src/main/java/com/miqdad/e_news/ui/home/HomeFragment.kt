@@ -39,7 +39,6 @@ class HomeFragment : Fragment() {
         activity?.actionBar?.hide()
 
 
-
         return binding.root
     }
 
@@ -62,6 +61,26 @@ class HomeFragment : Fragment() {
         }
     }
 
+
+
+
+    private fun showDataCategory(data: List<ArticlesItem>) {
+        binding.rvNews.apply {
+            val mAdapter = NewsAdapter()
+            layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            Log.i("apiData", "showData: $data")
+            adapter = mAdapter
+            mAdapter.setData(data)
+            mAdapter.setOnItemClickCallback(object : OnItemClickCallback{
+                override fun onItemClicked(item: ArticlesItem) {
+                    startActivity(
+                        Intent(context, DetailActivity::class.java)
+                            .putExtra("EXTRA_DATA", item)
+                    )
+                }
+            })
+        }
+    }
 
 
     private fun showError(isError: Throwable?) {

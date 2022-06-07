@@ -44,19 +44,6 @@
             app:layout_constraintGuide_begin="165dp"/>
 
         <TextView
-            android:id="@+id/tv_category"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:maxLines="1"
-            android:fontFamily="@font/poppins_bold"
-            android:textColor="@color/orange"
-            android:textSize="17sp"
-            app:layout_constraintStart_toStartOf="@id/guideline"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="@string/app_name"/>
-
-        <TextView
             android:id="@+id/tv_title"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -67,7 +54,7 @@
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@id/guideline"
-            app:layout_constraintTop_toBottomOf="@id/tv_category"/>
+            app:layout_constraintTop_toBottomOf="@id/guideline"/>
 
         <TextView
             android:id="@+id/tv_date"
