@@ -1,4 +1,4 @@
-package com.miqdad.e_news.ui.search
+package com.miqdad.e_news.ui.search.category
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -9,7 +9,6 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import com.miqdad.e_news.data.network.ArticlesItem
 import com.miqdad.e_news.databinding.RowItemCategoriesBinding
-import com.miqdad.e_news.databinding.RowItemNewsBinding
 import com.miqdad.e_news.ui.OnItemClickCallback
 
 class NewsCategoryAdapter : RecyclerView.Adapter<NewsCategoryAdapter.MyViewHolder>() {
@@ -37,7 +36,7 @@ class NewsCategoryAdapter : RecyclerView.Adapter<NewsCategoryAdapter.MyViewHolde
         RowItemCategoriesBinding.inflate(LayoutInflater.from(parent.context), parent, false)
     )
 
-    override fun onBindViewHolder(holder: NewsCategoryAdapter.MyViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val data = listNewsCategory[position]
         holder.binding.apply {
             tvTitle.text = data.title

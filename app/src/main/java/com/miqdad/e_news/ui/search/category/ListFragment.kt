@@ -1,4 +1,4 @@
-package com.miqdad.e_news
+package com.miqdad.e_news.ui.search.category
 
 import android.content.Intent
 import android.os.Bundle
@@ -13,8 +13,6 @@ import com.miqdad.e_news.data.network.ArticlesItem
 import com.miqdad.e_news.databinding.FragmentListBinding
 import com.miqdad.e_news.ui.OnItemClickCallback
 import com.miqdad.e_news.ui.detail.DetailActivity
-import com.miqdad.e_news.ui.home.HomeViewModel
-import com.miqdad.e_news.ui.search.NewsCategoryAdapter
 import com.miqdad.e_news.ui.search.SearchViewModel
 
 class ListFragment : Fragment() {

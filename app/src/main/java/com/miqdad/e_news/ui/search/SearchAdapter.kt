@@ -12,7 +12,7 @@ import com.miqdad.e_news.databinding.RowItemCategoriesBinding
 import com.miqdad.e_news.helper.HelperFunction
 import com.miqdad.e_news.ui.OnItemClickCallback
 
-class SearchAdapter(var customItemCount: Int? = null): RecyclerView.Adapter<SearchAdapter.MyViewHolder>() {
+class SearchAdapter(): RecyclerView.Adapter<SearchAdapter.MyViewHolder>() {
     private var listNews = ArrayList<ArticlesItem>()
 
     fun setDataSearch(data: List<ArticlesItem>?) {
@@ -57,5 +57,5 @@ class SearchAdapter(var customItemCount: Int? = null): RecyclerView.Adapter<Sear
         }
     }
 
-    override fun getItemCount(): Int = if(customItemCount == null) listNews.size else customItemCount!!
+    override fun getItemCount() = listNews.size
 }
