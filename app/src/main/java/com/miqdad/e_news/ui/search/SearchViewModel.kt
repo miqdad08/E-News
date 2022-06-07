@@ -35,16 +35,32 @@ class SearchViewModel(application: Application): AndroidViewModel(application) {
             })
     }
 
-//    fun getNews() {
-//        isLoading.value = true
-//        getDataByQuery({
-//            isLoading.value = false
-//            everythingResponse.value = it
-//        }, {
-//            isLoading.value = false
-//            isError.value = it
-//        })
-//    }
+    //untuk mendapatkan data dari parameter category
+    fun getDataCategory(responseHandler : (TopHeadlineResponse) -> Unit, errorHandler : (Throwable) -> Unit, category: String){
+        ApiClient.getApiService().getCategory(category )
+            //membuat background thread / asnycronus
+            .subscribeOn(Schedulers.io())
+            //menentukan dimana thread akan dibuat
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({
+                responseHandler(it)
+            },{
+                errorHandler(it)
+            })
+    }
+
+    fun getNewsCategory(category: String?) {
+        isLoading.value = true
+        category?.let {
+            getDataCategory({
+                isLoading.value = false
+                searchResponse.value = it
+            }, {
+                isLoading.value = false
+                isError.value = it
+            },it)
+        }
+    }
 
 
 

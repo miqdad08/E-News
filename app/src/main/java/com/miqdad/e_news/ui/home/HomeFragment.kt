@@ -1,6 +1,5 @@
 package com.miqdad.e_news.ui.home
 
-
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
@@ -97,7 +96,7 @@ class HomeFragment : Fragment() {
             val channel = NotificationChannel(channelId, name, importance).apply {
                 description = descriptionText
             }
-            val notificationManager: NotificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            val notificationManager = context?.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             notificationManager.createNotificationChannel(channel)
 
         }
@@ -107,13 +106,14 @@ class HomeFragment : Fragment() {
         val builder = context?.let {
             NotificationCompat.Builder(it, channelId)
                 .setSmallIcon(R.drawable.logo)
-                .setContentTitle("Example title")
-                .setContentText("example description")
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                .setContentTitle("You exit from E-News")
+                .setContentText("Succeed!")
+                .setPriority(NotificationCompat.PRIORITY_HIGH)
+
         }
 
-        with(NotificationManagerCompat.from(this)){
-            builder?.let { notify(notificationId, it.build()) }
+        with(context?.let { NotificationManagerCompat.from(it) }){
+            builder?.let { this?.notify(notificationId, it.build()) }
         }
     }
 }

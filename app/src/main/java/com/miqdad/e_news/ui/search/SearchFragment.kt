@@ -7,8 +7,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.viewpager.widget.ViewPager
+import com.miqdad.e_news.ListFragment
 import com.miqdad.e_news.data.network.ArticlesItem
 import com.miqdad.e_news.databinding.FragmentSearchBinding
 import com.miqdad.e_news.ui.NewsAdapter
@@ -39,17 +43,61 @@ class SearchFragment : Fragment() {
 //        (it.articles as List<ArticlesItem>)}
 
         setUpSortByMenu()
+        setUpTabBarAndViewPager()
 
         activity?.actionBar?.hide()
 
         return binding.root
     }
 
+    private fun setUpTabBarAndViewPager(){
+        val tabs = binding.tabLayout
+        val viewPager = binding.viewpager
+        tabs.setupWithViewPager(viewPager)
+        setUpTabBar(viewPager)
+    }
 
-    //mengset reclyer view
-    private fun setUpRecyclerView(data: List<ArticlesItem>?) {
+    private fun setUpTabBar(viewPager: ViewPager) {
+        val adapter = Adapter(childFragmentManager)
+        adapter.addFragment("Business")
+        adapter.addFragment("Entertainment")
+        adapter.addFragment("General")
+        adapter.addFragment("Health")
+        adapter.addFragment("Science")
+        adapter.addFragment("Sports")
+        adapter.addFragment("Technology")
+        viewPager.adapter = adapter
+    }
+
+    class Adapter(manager: FragmentManager) : FragmentPagerAdapter(manager) {
+        private val mFragmentList: MutableList<Fragment> = ArrayList()
+        private val mFragmentTitleList: MutableList<String> = ArrayList()
+        override fun getItem(position: Int): Fragment {
+            return mFragmentList[position]
+        }
+
+        override fun getCount(): Int {
+            return mFragmentList.size
+        }
+
+        fun addFragment(title: String) {
+            var bundle = Bundle()
+            val fragment = ListFragment()
+            bundle.putString("key", title)
+            fragment.arguments = bundle
+            mFragmentList.add(fragment)
+            mFragmentTitleList.add(title)
+        }
+
+        override fun getPageTitle(position: Int): CharSequence? {
+            return mFragmentTitleList[position]
+        }
+    }
+
+    //mengset recycler view
+    private fun setUpRecyclerView(data: List<ArticlesItem>?, itemCount: Int?) {
         binding.rvSearch.apply {
-            val mAdapter = SearchAdapter()
+            val mAdapter = SearchAdapter(itemCount)
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
             Log.i("apiData", "showData: $data")
             adapter = mAdapter
@@ -65,7 +113,6 @@ class SearchFragment : Fragment() {
         }
     }
 
-
     //untuk search
     fun setUpSortByMenu() {
         binding.searchView.setOnQueryTextListener(object :
@@ -74,7 +121,7 @@ class SearchFragment : Fragment() {
                 viewModel.getNewsBySearch(query)
 
                 viewModel.searchResponse.observe (viewLifecycleOwner) {
-                    setUpRecyclerView(it.articles as List<ArticlesItem>?)
+                    setUpRecyclerView(it.articles as List<ArticlesItem>?,5)
                 }
                 return false
             }
@@ -83,12 +130,21 @@ class SearchFragment : Fragment() {
                 viewModel.getNewsBySearch(newText)
 
                 viewModel.searchResponse.observe (viewLifecycleOwner) {
-                    setUpRecyclerView(it.articles as List<ArticlesItem>?)
+                    setUpRecyclerView(it.articles as List<ArticlesItem>?, 5)
                 }
                 return false
             }
 
+
+
         })
+        binding.searchView.setOnQueryTextFocusChangeListener { _, b ->
+            if (b) {
+                binding.rvSearch.visibility = View.VISIBLE
+            } else {
+                binding.rvSearch.visibility = View.GONE
+            }
+        }
     }
 
     //loading

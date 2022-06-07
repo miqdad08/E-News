@@ -1,4 +1,4 @@
-package com.miqdad.e_news.data.network
+//package com.miqdad.e_news.data.network
 //
 //import android.os.Parcelable
 //import com.google.gson.annotations.SerializedName
