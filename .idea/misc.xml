@@ -18,7 +18,14 @@
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/E-News/app/src/main/res/layout/row_item_category_tab_bar.xml" value="0.21302083333333333" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/E-News/app/src/main/res/layout/row_item_news.xml" value="0.1" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/E-News/app/src/main/res/menu/menu.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/bg_splash_screen.xml" value="0.1955" />
+        <entry key="app/src/main/res/drawable/tab_corners_bg.xml" value="0.1535" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.16977800201816348" />
+        <entry key="app/src/main/res/layout/fragment_detail.xml" value="0.16977800201816348" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_list.xml" value="0.16977800201816348" />
+        <entry key="app/src/main/res/layout/fragment_search.xml" value="0.16977800201816348" />
+        <entry key="app/src/main/res/layout/row_item_categories.xml" value="0.16977800201816348" />
         <entry key="app/src/main/res/layout/row_item_news.xml" value="0.35052083333333334" />
       </map>
     </option>
