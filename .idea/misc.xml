@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/E-News/app/src/main/res/drawable/child_selector.xml" value="0.1" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/E-News/app/src/main/res/drawable/home_ic_selector.xml" value="0.1" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/E-News/app/src/main/res/drawable/row_item_home_tab_bar.xml" value="0.1395" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/E-News/app/src/main/res/drawable/search_ic_selector.xml" value="0.1" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/E-News/app/src/main/res/layout/activity_detail.xml" value="0.1" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/E-News/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/E-News/app/src/main/res/layout/activity_splash_screen.xml" value="0.21302083333333333" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/E-News/app/src/main/res/layout/content_detail.xml" value="0.15806159420289856" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/E-News/app/src/main/res/layout/fragment_home.xml" value="0.10562310030395136" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/E-News/app/src/main/res/layout/fragment_list.xml" value="0.21302083333333333" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/E-News/app/src/main/res/layout/fragment_search.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/E-News/app/src/main/res/layout/row_item_categories.xml" value="0.21302083333333333" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/E-News/app/src/main/res/layout/row_item_category_tab_bar.xml" value="0.21302083333333333" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/E-News/app/src/main/res/layout/row_item_news.xml" value="0.1" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/E-News/app/src/main/res/menu/menu.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/bg_splash_screen.xml" value="0.1955" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.16977800201816348" />
+        <entry key="app/src/main/res/layout/fragment_detail.xml" value="0.16977800201816348" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_list.xml" value="0.16977800201816348" />
+        <entry key="app/src/main/res/layout/fragment_search.xml" value="0.16977800201816348" />
+        <entry key="app/src/main/res/layout/row_item_categories.xml" value="0.16977800201816348" />
+        <entry key="app/src/main/res/layout/row_item_news.xml" value="0.35052083333333334" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
