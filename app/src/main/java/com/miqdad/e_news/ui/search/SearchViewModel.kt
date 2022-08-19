@@ -16,10 +16,7 @@ class SearchViewModel(application: Application): AndroidViewModel(application) {
 
     var isLoading = MutableLiveData<Boolean>()
     var isError = MutableLiveData<Throwable>()
-
     val searchResponse = MutableLiveData<TopHeadlineResponse>()
-
-
 
     //untuk mendapat data dari parameter query
     fun getDataByQuery(responseHandler : (TopHeadlineResponse) -> Unit, errorHandler : (Throwable) -> Unit, query: String){
@@ -62,8 +59,6 @@ class SearchViewModel(application: Application): AndroidViewModel(application) {
         }
     }
 
-
-
     fun getNewsBySearch(query: String?) {
         isLoading.value = true
         query?.let {
@@ -78,6 +73,4 @@ class SearchViewModel(application: Application): AndroidViewModel(application) {
             )
         }
     }
-
-
 }

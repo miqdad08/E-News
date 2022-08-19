@@ -14,9 +14,7 @@ import com.miqdad.e_news.ui.OnItemClickCallback
 
 class NewsCategoryAdapter : RecyclerView.Adapter<NewsCategoryAdapter.MyViewHolder>() {
 
-
     private var listNewsCategory = ArrayList<ArticlesItem>()
-
     private var onItemClickCallBack: OnItemClickCallback? = null
 
     fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
@@ -56,7 +54,5 @@ class NewsCategoryAdapter : RecyclerView.Adapter<NewsCategoryAdapter.MyViewHolde
         }
     }
 
-
-    override fun getItemCount()= listNewsCategory.size
-
+    override fun getItemCount() = listNewsCategory.size
 }

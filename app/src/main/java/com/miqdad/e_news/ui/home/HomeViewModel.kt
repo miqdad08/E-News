@@ -11,7 +11,6 @@ class HomeViewModel : ViewModel() {
 
     var isLoading = MutableLiveData<Boolean>()
     var isError = MutableLiveData<Throwable>()
-
     var topHeadlineResponse = MutableLiveData<TopHeadlineResponse>()
 
     fun getData(responseHandler : (TopHeadlineResponse) -> Unit, errorHandler : (Throwable) -> Unit, news : String){

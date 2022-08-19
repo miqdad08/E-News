@@ -22,7 +22,6 @@ import com.miqdad.e_news.ui.detail.DetailActivity
 class SearchFragment : Fragment() {
 
     private var _binding: FragmentSearchBinding? = null
-
     private val binding get() = _binding!!
 
     private var _viewModel: SearchViewModel? = null
@@ -134,9 +133,6 @@ class SearchFragment : Fragment() {
                 }
                 return false
             }
-
-
-
         })
         binding.searchView.setOnQueryTextFocusChangeListener { _, b ->
             if (b) {
