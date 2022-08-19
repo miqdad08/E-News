@@ -15,9 +15,6 @@ class MainActivity : AppCompatActivity() {
     private var _binding: ActivityMainBinding? = null
     private val binding get() = _binding as ActivityMainBinding
 
-    private lateinit var viewModel: HomeViewModel
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         _binding = ActivityMainBinding.inflate(layoutInflater)
@@ -30,11 +27,13 @@ class MainActivity : AppCompatActivity() {
 
         val appBarConfiguration  = AppBarConfiguration(
             setOf(
-                R.id.home_fragment, R.id.searchFragment
+                R.id.home_fragment,
+                R.id.search_fragment
             )
         )
         setupActionBarWithNavController(navController , appBarConfiguration)
         navView.setupWithNavController(navController)
+        binding.navView.selectedItemId = R.id.nav_host_fragment_activity_main
 
     }
 }
