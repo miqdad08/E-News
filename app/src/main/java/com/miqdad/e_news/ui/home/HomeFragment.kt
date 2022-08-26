@@ -16,10 +16,11 @@ import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearSnapHelper
+import androidx.recyclerview.widget.RecyclerView
 import com.miqdad.e_news.R
 import com.miqdad.e_news.data.network.ArticlesItem
 import com.miqdad.e_news.databinding.FragmentHomeBinding
-import com.miqdad.e_news.ui.NewsAdapter
 import com.miqdad.e_news.ui.OnItemClickCallback
 import com.miqdad.e_news.ui.detail.DetailActivity
 
@@ -44,6 +45,8 @@ class HomeFragment : Fragment() {
         viewModel.getTopHeadlineNews("ID")
         viewModel.topHeadlineResponse.observe(viewLifecycleOwner) { showData(it.articles as List<ArticlesItem>) }
 
+
+
         activity?.actionBar?.hide()
 
         createNotificationChannel()
@@ -55,6 +58,21 @@ class HomeFragment : Fragment() {
     }
 
     private fun showData(data: List<ArticlesItem>) {
+        binding.rvSlide.apply {
+            val mAdapter = SliderAdapter()
+            layoutManager = CenterItemLayoutManager(context, RecyclerView.HORIZONTAL, false)
+            adapter = mAdapter
+            LinearSnapHelper().attachToRecyclerView(this)
+            mAdapter.setData(data)
+            mAdapter.setOnItemClickCallback(object : OnItemClickCallback{
+                override fun onItemClicked(data: ArticlesItem) {
+                    startActivity(
+                        Intent(context, DetailActivity::class.java)
+                            .putExtra("EXTRA_DATA", data)
+                    )
+                }
+            })
+        }
         binding.rvNews.apply {
             val mAdapter = NewsAdapter()
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)

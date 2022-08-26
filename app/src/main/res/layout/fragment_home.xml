@@ -4,14 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_margin="16dp"
     tools:context=".ui.home.HomeFragment">
 
     <TextView
         android:id="@+id/tv_viewPager"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
         android:text="@string/txt_top_news"
+        android:layout_marginBottom="10dp"
         android:fontFamily="@font/poppins_bold"
         android:textColor="@color/black"
         android:textSize="22sp"
@@ -23,21 +24,17 @@
         android:id="@+id/btn_exit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
         android:src="@drawable/ic_exit"
         android:background="@android:color/transparent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
 
-    <androidx.viewpager.widget.ViewPager
-        android:id="@+id/view_pager_news"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_slide"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/image"
+        android:layout_marginTop="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_viewPager" />
@@ -46,8 +43,6 @@
         android:id="@+id/tv_today_news"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
         android:layout_marginTop="20dp"
         android:text="@string/txt_today_news"
         android:fontFamily="@font/poppins_bold"
@@ -55,7 +50,7 @@
         android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/view_pager_news" />
+        app:layout_constraintTop_toBottomOf="@id/rv_slide" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_news"
