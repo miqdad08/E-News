@@ -32,7 +32,7 @@
                 android:layout_height="match_parent"
                 android:contentDescription="@string/txt_image_news"
                 android:scaleType="centerCrop"
-                android:src="@drawable/img2"/>
+                android:src="@drawable/image"/>
 
         </com.google.android.material.card.MaterialCardView>
 

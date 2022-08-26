@@ -4,10 +4,18 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/E-News/app/src/main/res/drawable/child_selector.xml" value="0.1" />
-        <entry key="..\:/Users/ASUS/AndroidStudioProjects/E-News/app/src/main/res/layout/activity_detail.xml" value="0.1" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/E-News/app/src/main/res/drawable/searchview_bg.xml" value="0.166" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/E-News/app/src/main/res/drawable/shape_tab_indicator.xml" value="0.1395" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/E-News/app/src/main/res/drawable/tab_corners_bg.xml" value="0.1395" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/E-News/app/src/main/res/layout/activity_detail.xml" value="0.22" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/E-News/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/E-News/app/src/main/res/layout/content_detail.xml" value="0.15806159420289856" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/E-News/app/src/main/res/layout/fragment_detail.xml" value="0.11096014492753623" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/E-News/app/src/main/res/layout/fragment_home.xml" value="0.22" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/E-News/app/src/main/res/layout/fragment_list.xml" value="0.103596757852077" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/E-News/app/src/main/res/layout/fragment_search.xml" value="0.2171875" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/E-News/app/src/main/res/layout/row_image_slider.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/ASUS/AndroidStudioProjects/E-News/app/src/main/res/layout/row_item_categories.xml" value="0.103596757852077" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/E-News/app/src/main/res/layout/row_item_news.xml" value="0.1" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/E-News/app/src/main/res/menu/menu.xml" value="0.1" />
         <entry key="..\:/Users/Muhammad Azzam/fromalif/E-News/app/src/main/res/drawable/shape_tab_indicator.xml" value="0.1" />

@@ -22,6 +22,7 @@ interface ApiService {
     @GET("top-headlines")
     fun getCategory(
         @Query("category") category : String,
+        @Query("country") country : String = "ID",
         @Query("apiKey") api_key : String = API_KEY
     ): Flowable<TopHeadlineResponse>
 }

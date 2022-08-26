@@ -79,5 +79,4 @@ class SearchViewModel(application: Application): AndroidViewModel(application) {
         }
     }
 
-
 }
