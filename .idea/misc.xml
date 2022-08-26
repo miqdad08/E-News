@@ -18,6 +18,7 @@
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/E-News/app/src/main/res/layout/row_item_categories.xml" value="0.103596757852077" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/E-News/app/src/main/res/layout/row_item_news.xml" value="0.1" />
         <entry key="..\:/Users/ASUS/AndroidStudioProjects/E-News/app/src/main/res/menu/menu.xml" value="0.1" />
+<<<<<<< HEAD
         <entry key="..\:/Users/Muhammad Azzam/fromalif/E-News/app/src/main/res/drawable/shape_tab_indicator.xml" value="0.1" />
         <entry key="..\:/Users/Muhammad Azzam/fromalif/E-News/app/src/main/res/layout/activity_detail.xml" value="0.1388888888888889" />
         <entry key="..\:/Users/Muhammad Azzam/fromalif/E-News/app/src/main/res/layout/activity_main.xml" value="0.1388888888888889" />
@@ -32,6 +33,20 @@
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_search.xml" value="0.25" />
         <entry key="app/src/main/res/layout/row_item_categories.xml" value="0.35052083333333334" />
+=======
+        <entry key="app/src/main/res/drawable/bg_splash_screen.xml" value="0.1955" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.1465" />
+        <entry key="app/src/main/res/drawable/search_ic_selector.xml" value="0.1465" />
+        <entry key="app/src/main/res/drawable/searchview_bg.xml" value="0.1465" />
+        <entry key="app/src/main/res/drawable/tab_corners_bg.xml" value="0.1535" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.16977800201816348" />
+        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_detail.xml" value="0.16977800201816348" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_list.xml" value="0.16977800201816348" />
+        <entry key="app/src/main/res/layout/fragment_search.xml" value="0.16977800201816348" />
+        <entry key="app/src/main/res/layout/row_item_categories.xml" value="0.16977800201816348" />
+>>>>>>> 6764822c3d10b229a7836bca43a61c780a676744
         <entry key="app/src/main/res/layout/row_item_news.xml" value="0.35052083333333334" />
       </map>
     </option>

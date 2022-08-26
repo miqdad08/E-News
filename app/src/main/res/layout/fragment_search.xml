@@ -86,7 +86,11 @@
         android:layout_marginTop="10dp"
         android:layout_marginHorizontal="20dp"
         app:tabIndicatorGravity="stretch"
+<<<<<<< HEAD
         app:tabIndicator="@drawable/shape_tab_indicator"
+=======
+        app:tabIndicator="@drawable/tab_corners_bg"
+>>>>>>> 6764822c3d10b229a7836bca43a61c780a676744
         app:tabIndicatorColor="@color/black"
         app:tabMode="scrollable"
         app:tabSelectedTextColor="@color/white"
