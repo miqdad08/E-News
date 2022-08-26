@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
     tools:context=".ui.detail.DetailActivity">
+
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
@@ -17,12 +17,24 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="5dp"
+                android:background="@android:color/transparent"
+                android:src="@drawable/btn_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_img_detail"
+                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="4dp"
+                android:layout_margin="16dp"
                 app:layout_constraintBottom_toTopOf="@+id/tv_detail_title"
                 app:layout_constraintTop_toBottomOf="@+id/xeora_dzikir">
 

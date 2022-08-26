@@ -73,8 +73,4 @@ class SearchViewModel(application: Application): AndroidViewModel(application) {
             )
         }
     }
-<<<<<<< HEAD
-
-=======
->>>>>>> 6764822c3d10b229a7836bca43a61c780a676744
 }
