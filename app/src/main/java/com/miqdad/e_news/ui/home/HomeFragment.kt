@@ -45,8 +45,6 @@ class HomeFragment : Fragment() {
         viewModel.getTopHeadlineNews("ID")
         viewModel.topHeadlineResponse.observe(viewLifecycleOwner) { showData(it.articles as List<ArticlesItem>) }
 
-
-
         activity?.actionBar?.hide()
 
         createNotificationChannel()
