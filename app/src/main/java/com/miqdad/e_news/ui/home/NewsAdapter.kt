@@ -1,4 +1,4 @@
-package com.miqdad.e_news.ui
+package com.miqdad.e_news.ui.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -10,6 +10,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.miqdad.e_news.data.network.ArticlesItem
 import com.miqdad.e_news.databinding.RowItemNewsBinding
 import com.miqdad.e_news.helper.HelperFunction
+import com.miqdad.e_news.ui.OnItemClickCallback
 
 class NewsAdapter : RecyclerView.Adapter<NewsAdapter.MyViewHolder>() {
     private var listNews = ArrayList<ArticlesItem>()
