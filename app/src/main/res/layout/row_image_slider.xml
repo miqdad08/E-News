@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    app:cardCornerRadius="20dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <ImageView
+        android:id="@+id/img_artikel"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/image"
+        android:clipToOutline="true"
+        android:src="@drawable/image"
+        android:scaleType="centerCrop"/>
+
+
+</androidx.cardview.widget.CardView>

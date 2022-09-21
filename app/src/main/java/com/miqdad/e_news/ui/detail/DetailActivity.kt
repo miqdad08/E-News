@@ -17,10 +17,15 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         initView()
+
+        binding.apply {
+            btnBack.setOnClickListener {
+                finish()
+            }
+        }
     }
 
     private fun initView() {
@@ -39,6 +44,7 @@ class DetailActivity : AppCompatActivity() {
 
         }
     }
+
 
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()

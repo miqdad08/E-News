@@ -12,17 +12,15 @@ import androidx.fragment.app.FragmentPagerAdapter
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager.widget.ViewPager
-import com.miqdad.e_news.ListFragment
+import com.miqdad.e_news.ui.search.category.ListFragment
 import com.miqdad.e_news.data.network.ArticlesItem
 import com.miqdad.e_news.databinding.FragmentSearchBinding
-import com.miqdad.e_news.ui.NewsAdapter
 import com.miqdad.e_news.ui.OnItemClickCallback
 import com.miqdad.e_news.ui.detail.DetailActivity
 
 class SearchFragment : Fragment() {
 
     private var _binding: FragmentSearchBinding? = null
-
     private val binding get() = _binding!!
 
     private var _viewModel: SearchViewModel? = null
@@ -95,9 +93,9 @@ class SearchFragment : Fragment() {
     }
 
     //mengset recycler view
-    private fun setUpRecyclerView(data: List<ArticlesItem>?, itemCount: Int?) {
+    private fun setUpRecyclerView(data: List<ArticlesItem>?) {
         binding.rvSearch.apply {
-            val mAdapter = SearchAdapter(itemCount)
+            val mAdapter = SearchAdapter()
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.VERTICAL, false)
             Log.i("apiData", "showData: $data")
             adapter = mAdapter
@@ -121,7 +119,7 @@ class SearchFragment : Fragment() {
                 viewModel.getNewsBySearch(query)
 
                 viewModel.searchResponse.observe (viewLifecycleOwner) {
-                    setUpRecyclerView(it.articles as List<ArticlesItem>?,5)
+                    setUpRecyclerView(it.articles as List<ArticlesItem>?)
                 }
                 return false
             }
@@ -130,13 +128,10 @@ class SearchFragment : Fragment() {
                 viewModel.getNewsBySearch(newText)
 
                 viewModel.searchResponse.observe (viewLifecycleOwner) {
-                    setUpRecyclerView(it.articles as List<ArticlesItem>?, 5)
+                    setUpRecyclerView(it.articles as List<ArticlesItem>?)
                 }
                 return false
             }
-
-
-
         })
         binding.searchView.setOnQueryTextFocusChangeListener { _, b ->
             if (b) {

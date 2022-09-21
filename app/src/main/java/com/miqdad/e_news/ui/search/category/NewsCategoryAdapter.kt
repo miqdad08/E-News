@@ -1,4 +1,4 @@
-package com.miqdad.e_news.ui.search
+package com.miqdad.e_news.ui.search.category
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -9,41 +9,37 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
 import com.miqdad.e_news.data.network.ArticlesItem
 import com.miqdad.e_news.databinding.RowItemCategoriesBinding
-import com.miqdad.e_news.helper.HelperFunction
 import com.miqdad.e_news.ui.OnItemClickCallback
 
-class SearchAdapter(var customItemCount: Int? = null): RecyclerView.Adapter<SearchAdapter.MyViewHolder>() {
+class NewsCategoryAdapter : RecyclerView.Adapter<NewsCategoryAdapter.MyViewHolder>() {
 
-    private var listNews = ArrayList<ArticlesItem>()
+    private var listNewsCategory = ArrayList<ArticlesItem>()
+    private var onItemClickCallBack: OnItemClickCallback? = null
 
-    fun setDataSearch(data: List<ArticlesItem>?) {
-        if (data == null) return
-        listNews.clear()
-        listNews.addAll(data)
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
+        this.onItemClickCallBack = onItemClickCallback
     }
 
-    private var onItemClickCallback: OnItemClickCallback? = null
-
-    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback){
-        this.onItemClickCallback = onItemClickCallback
+    fun setData(data: List<ArticlesItem>?) {
+        if (data == null) return
+        listNewsCategory.clear()
+        listNewsCategory.addAll(data)
     }
 
     class MyViewHolder(val binding: RowItemCategoriesBinding) :
         RecyclerView.ViewHolder(binding.root)
 
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int) = MyViewHolder(
         RowItemCategoriesBinding.inflate(LayoutInflater.from(parent.context), parent, false)
     )
 
-    private val limit = 10
-
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        val data = listNews[position]
+        val data = listNewsCategory[position]
         holder.binding.apply {
-            var date = HelperFunction().dateFormatter(data.publishedAt!!)
             tvTitle.text = data.title
-            tvDate.text = date
-            tvAuthor.text = "By ${data.author}"
+            tvAuthor.text = data.author
+            tvDate.text = data.publishedAt
             Glide.with(imgNews.context)
                 .load(data.urlToImage)
                 .apply(RequestOptions())
@@ -51,12 +47,11 @@ class SearchAdapter(var customItemCount: Int? = null): RecyclerView.Adapter<Sear
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .priority(Priority.HIGH)
                 .into(imgNews)
-
-            holder.itemView.setOnClickListener {
-                onItemClickCallback?.onItemClicked(data)
-            }
+        }
+        holder.itemView.setOnClickListener {
+            onItemClickCallBack?.onItemClicked(data)
         }
     }
 
-    override fun getItemCount(): Int = if(customItemCount == null) listNews.size else customItemCount!!
+    override fun getItemCount() = listNewsCategory.size
 }
