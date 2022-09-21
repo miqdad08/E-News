@@ -1,5 +1,6 @@
 package com.miqdad.e_news.ui.home
 
+import android.app.AlertDialog
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.content.Context
@@ -13,21 +14,19 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
-import androidx.core.content.ContextCompat.getSystemService
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearSnapHelper
+import androidx.recyclerview.widget.RecyclerView
 import com.miqdad.e_news.R
 import com.miqdad.e_news.data.network.ArticlesItem
 import com.miqdad.e_news.databinding.FragmentHomeBinding
-import com.miqdad.e_news.ui.NewsAdapter
 import com.miqdad.e_news.ui.OnItemClickCallback
 import com.miqdad.e_news.ui.detail.DetailActivity
 
 class HomeFragment : Fragment() {
-    ///
     private val channelId = "channel_01"
     private val notificationId = 101
-    ///
 
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
@@ -44,31 +43,45 @@ class HomeFragment : Fragment() {
         _viewModel = ViewModelProvider(this)[HomeViewModel::class.java]
 
         viewModel.getTopHeadlineNews("ID")
-        viewModel.topHeadlineResponse.observe(viewLifecycleOwner){showData(it.articles as List<ArticlesItem>)}
+        viewModel.topHeadlineResponse.observe(viewLifecycleOwner) { showData(it.articles as List<ArticlesItem>) }
 
         activity?.actionBar?.hide()
 
-        //////
         createNotificationChannel()
         binding.btnExit.setOnClickListener {
             sendNotification()
+            alertDialogExit()
         }
-        ////
         return binding.root
     }
 
     private fun showData(data: List<ArticlesItem>) {
+        binding.rvSlide.apply {
+            val mAdapter = SliderAdapter()
+            layoutManager = CenterItemLayoutManager(context, RecyclerView.HORIZONTAL, false)
+            adapter = mAdapter
+            LinearSnapHelper().attachToRecyclerView(this)
+            mAdapter.setData(data)
+            mAdapter.setOnItemClickCallback(object : OnItemClickCallback{
+                override fun onItemClicked(data: ArticlesItem) {
+                    startActivity(
+                        Intent(context, DetailActivity::class.java)
+                            .putExtra("EXTRA_DATA", data)
+                    )
+                }
+            })
+        }
         binding.rvNews.apply {
             val mAdapter = NewsAdapter()
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             Log.i("apiData", "showData: $data")
             adapter = mAdapter
             mAdapter.setData(data)
-            mAdapter.setOnItemClickCallback(object : OnItemClickCallback{
-                override fun onItemClicked(item: ArticlesItem) {
+            mAdapter.setOnItemClickCallback(object : OnItemClickCallback {
+                override fun onItemClicked(data: ArticlesItem) {
                     startActivity(
                         Intent(context, DetailActivity::class.java)
-                            .putExtra("EXTRA_DATA", item)
+                            .putExtra("EXTRA_DATA", data)
                     )
                 }
             })
@@ -80,40 +93,56 @@ class HomeFragment : Fragment() {
     }
 
     private fun showLoading(isLoading: Boolean?) {
-        if(isLoading == true){
+        if (isLoading == true) {
             binding.progressMain.visibility = View.VISIBLE
         } else {
             binding.progressMain.visibility = View.INVISIBLE
         }
     }
 
-    //notif
     private fun createNotificationChannel() {
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val name = "Notification Title"
             val descriptionText = "Notification Text"
             val importance = NotificationManager.IMPORTANCE_DEFAULT
             val channel = NotificationChannel(channelId, name, importance).apply {
                 description = descriptionText
             }
-            val notificationManager = context?.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+            val notificationManager =
+                context?.getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             notificationManager.createNotificationChannel(channel)
-
         }
     }
 
-    private fun sendNotification(){
+    private fun sendNotification() {
         val builder = context?.let {
             NotificationCompat.Builder(it, channelId)
                 .setSmallIcon(R.drawable.logo)
                 .setContentTitle("You exit from E-News")
                 .setContentText("Succeed!")
-                .setPriority(NotificationCompat.PRIORITY_HIGH)
-
+                .setPriority(NotificationCompat.PRIORITY_MAX)
         }
 
-        with(context?.let { NotificationManagerCompat.from(it) }){
+        with(context?.let { NotificationManagerCompat.from(it) }) {
             builder?.let { this?.notify(notificationId, it.build()) }
         }
+    }
+
+    private fun alertDialogExit() {
+        val builder = AlertDialog.Builder(context, R.style.AlertDialog)
+        builder.setTitle("Exit")
+        builder.setMessage("Are you sure to exit?")
+        builder.setIcon(R.drawable.ic_warning_foreground)
+        builder.setPositiveButton("Yes") { dialog, which ->
+            finish()
+        }
+        builder.setNegativeButton("No") { dialog, which -> }
+        builder.setNeutralButton("Cancel") { dialog, which -> }
+        val dialog: AlertDialog = builder.create()
+        dialog.show()
+    }
+
+    private fun finish() {
+        TODO("Not yet implemented")
     }
 }
