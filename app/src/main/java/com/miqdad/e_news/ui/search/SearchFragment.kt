@@ -13,7 +13,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager.widget.ViewPager
 import com.miqdad.e_news.ui.search.category.ListFragment
-import com.miqdad.e_news.data.network.ArticlesItem
+import com.miqdad.e_news.data.ArticlesItem
 import com.miqdad.e_news.databinding.FragmentSearchBinding
 import com.miqdad.e_news.ui.OnItemClickCallback
 import com.miqdad.e_news.ui.detail.DetailActivity
@@ -36,9 +36,6 @@ class SearchFragment : Fragment() {
 
         _binding = FragmentSearchBinding.inflate(inflater, container, false)
         _viewModel = ViewModelProvider(this)[SearchViewModel::class.java]
-
-//        viewModel.ewLifecycleOwner){setUpRecyclerView
-//        (it.articles as List<ArticlesItem>)}
 
         setUpSortByMenu()
         setUpTabBarAndViewPager()
@@ -112,7 +109,7 @@ class SearchFragment : Fragment() {
     }
 
     //untuk search
-    fun setUpSortByMenu() {
+    private fun setUpSortByMenu() {
         binding.searchView.setOnQueryTextListener(object :
             androidx.appcompat.widget.SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
@@ -161,5 +158,4 @@ class SearchFragment : Fragment() {
             }
         }
     }
-
 }

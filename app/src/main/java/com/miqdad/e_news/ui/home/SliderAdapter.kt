@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.miqdad.e_news.data.network.ArticlesItem
+import com.miqdad.e_news.data.ArticlesItem
 import com.miqdad.e_news.databinding.RowImageSliderBinding
 import com.miqdad.e_news.ui.OnItemClickCallback
 

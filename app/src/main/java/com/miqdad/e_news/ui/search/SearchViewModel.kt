@@ -1,16 +1,12 @@
 package com.miqdad.e_news.ui.search
 
 import android.app.Application
-import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
 import com.miqdad.e_news.data.network.ApiClient
-import com.miqdad.e_news.data.network.TopHeadlineResponse
+import com.miqdad.e_news.data.TopHeadlineResponse
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.schedulers.Schedulers
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class SearchViewModel(application: Application): AndroidViewModel(application) {
 

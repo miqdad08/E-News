@@ -19,7 +19,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.miqdad.e_news.R
-import com.miqdad.e_news.data.network.ArticlesItem
+import com.miqdad.e_news.data.ArticlesItem
 import com.miqdad.e_news.databinding.FragmentHomeBinding
 import com.miqdad.e_news.ui.OnItemClickCallback
 import com.miqdad.e_news.ui.detail.DetailActivity
@@ -85,18 +85,6 @@ class HomeFragment : Fragment() {
                     )
                 }
             })
-        }
-    }
-
-    private fun showError(isError: Throwable?) {
-        Log.e("MainActivity", "Error get data ${isError.toString()}")
-    }
-
-    private fun showLoading(isLoading: Boolean?) {
-        if (isLoading == true) {
-            binding.progressMain.visibility = View.VISIBLE
-        } else {
-            binding.progressMain.visibility = View.INVISIBLE
         }
     }
 

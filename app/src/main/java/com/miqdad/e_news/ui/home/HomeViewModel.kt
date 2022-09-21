@@ -3,7 +3,7 @@ package com.miqdad.e_news.ui.home
 import androidx.lifecycle.MutableLiveData
 import com.miqdad.e_news.data.network.ApiClient
 import androidx.lifecycle.ViewModel
-import com.miqdad.e_news.data.network.TopHeadlineResponse
+import com.miqdad.e_news.data.TopHeadlineResponse
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.schedulers.Schedulers
 

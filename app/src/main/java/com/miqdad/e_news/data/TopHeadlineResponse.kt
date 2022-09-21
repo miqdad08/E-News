@@ -1,4 +1,4 @@
-package com.miqdad.e_news.data.network
+package com.miqdad.e_news.data
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
@@ -13,7 +13,7 @@ data class TopHeadlineResponse(
 	@field:SerializedName("articles")
 	val articles: List<ArticlesItem?>? = null,
 
-) : Parcelable
+	) : Parcelable
 
 @Parcelize
 data class ArticlesItem(
