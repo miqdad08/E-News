@@ -35,12 +35,10 @@ class SearchAdapter(var customItemCount: Int? = null): RecyclerView.Adapter<Sear
         RowItemCategoriesBinding.inflate(LayoutInflater.from(parent.context), parent, false)
     )
 
-    private val limit = 10
-
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val data = listNews[position]
         holder.binding.apply {
-            var date = HelperFunction().dateFormatter(data.publishedAt!!)
+            val date = HelperFunction().dateFormatter(data.publishedAt!!)
             tvTitle.text = data.title
             tvDate.text = date
             tvAuthor.text = "By ${data.author}"

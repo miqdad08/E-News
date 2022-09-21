@@ -24,9 +24,9 @@ class SearchFragment : Fragment() {
     private val binding get() = _binding!!
 
     private var _viewModel: SearchViewModel? = null
+
     private val viewModel get() = _viewModel as SearchViewModel
     private var isLoading: Boolean? = null
-
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,7 +45,7 @@ class SearchFragment : Fragment() {
         return binding.root
     }
 
-    private fun setUpTabBarAndViewPager(){
+    private fun setUpTabBarAndViewPager() {
         val tabs = binding.tabLayout
         val viewPager = binding.viewpager
         tabs.setupWithViewPager(viewPager)
@@ -115,7 +115,7 @@ class SearchFragment : Fragment() {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 viewModel.getNewsBySearch(query)
 
-                viewModel.searchResponse.observe (viewLifecycleOwner) {
+                viewModel.searchResponse.observe(viewLifecycleOwner) {
                     setUpRecyclerView(it.articles as List<ArticlesItem>?)
                 }
                 return false
@@ -124,7 +124,7 @@ class SearchFragment : Fragment() {
             override fun onQueryTextChange(newText: String?): Boolean {
                 viewModel.getNewsBySearch(newText)
 
-                viewModel.searchResponse.observe (viewLifecycleOwner) {
+                viewModel.searchResponse.observe(viewLifecycleOwner) {
                     setUpRecyclerView(it.articles as List<ArticlesItem>?)
                 }
                 return false
@@ -135,26 +135,6 @@ class SearchFragment : Fragment() {
                 binding.rvSearch.visibility = View.VISIBLE
             } else {
                 binding.rvSearch.visibility = View.GONE
-            }
-        }
-    }
-
-    //loading
-    private fun loadingStateView() {
-        binding.apply {
-            when (isLoading) {
-                true -> {
-                    layoutSearch.visibility = View.INVISIBLE
-                    progressBar.visibility = View.VISIBLE
-                }
-                false -> {
-                    layoutSearch.visibility = View.VISIBLE
-                    progressBar.visibility = View.INVISIBLE
-                }
-                true -> {
-                    layoutSearch.visibility = View.INVISIBLE
-                    progressBar.visibility = View.VISIBLE
-                }
             }
         }
     }

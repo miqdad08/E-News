@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
         supportActionBar?.hide()
 
-        binding.swipeRefreshLayout.setOnRefreshListener{
+        binding.swipeRefreshLayout.setOnRefreshListener {
             recreate()
         }
 
@@ -29,15 +29,15 @@ class MainActivity : AppCompatActivity() {
 
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
 
-        val appBarConfiguration  = AppBarConfiguration(
+        val appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.home_fragment,
                 R.id.search_fragment
             )
         )
-        setupActionBarWithNavController(navController , appBarConfiguration)
+
+        setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
         binding.navView.selectedItemId = R.id.nav_host_fragment_activity_main
-
     }
 }

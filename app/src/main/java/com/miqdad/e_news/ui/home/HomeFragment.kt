@@ -62,7 +62,7 @@ class HomeFragment : Fragment() {
             adapter = mAdapter
             LinearSnapHelper().attachToRecyclerView(this)
             mAdapter.setData(data)
-            mAdapter.setOnItemClickCallback(object : OnItemClickCallback{
+            mAdapter.setOnItemClickCallback(object : OnItemClickCallback {
                 override fun onItemClicked(data: ArticlesItem) {
                     startActivity(
                         Intent(context, DetailActivity::class.java)
@@ -121,11 +121,11 @@ class HomeFragment : Fragment() {
         builder.setTitle("Exit")
         builder.setMessage("Are you sure to exit?")
         builder.setIcon(R.drawable.ic_warning_foreground)
-        builder.setPositiveButton("Yes") { dialog, which ->
+        builder.setPositiveButton("Yes") { _, _ ->
             finish()
         }
-        builder.setNegativeButton("No") { dialog, which -> }
-        builder.setNeutralButton("Cancel") { dialog, which -> }
+        builder.setNegativeButton("No") { _, _ -> }
+        builder.setNeutralButton("Cancel") { _, _ -> }
         val dialog: AlertDialog = builder.create()
         dialog.show()
     }

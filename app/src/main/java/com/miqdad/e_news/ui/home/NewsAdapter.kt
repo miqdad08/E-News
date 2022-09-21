@@ -23,7 +23,7 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.MyViewHolder>() {
 
     private var onItemClickCallback: OnItemClickCallback? = null
 
-    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback){
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
         this.onItemClickCallback = onItemClickCallback
     }
 
@@ -37,7 +37,7 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.MyViewHolder>() {
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val data = listNews[position]
         holder.binding.apply {
-            var date = HelperFunction().dateFormatter(data.publishedAt!!)
+            val date = HelperFunction().dateFormatter(data.publishedAt!!)
             tvTitle.text = data.title
             tvTime.text = date
             tvAuthor.text = "By ${data.author}"

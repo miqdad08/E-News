@@ -8,14 +8,18 @@ import com.miqdad.e_news.data.TopHeadlineResponse
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers
 import io.reactivex.rxjava3.schedulers.Schedulers
 
-class SearchViewModel(application: Application): AndroidViewModel(application) {
+class SearchViewModel(application: Application) : AndroidViewModel(application) {
 
     var isLoading = MutableLiveData<Boolean>()
     var isError = MutableLiveData<Throwable>()
     val searchResponse = MutableLiveData<TopHeadlineResponse>()
 
     //untuk mendapat data dari parameter query
-    fun getDataByQuery(responseHandler : (TopHeadlineResponse) -> Unit, errorHandler : (Throwable) -> Unit, query: String){
+    fun getDataByQuery(
+        responseHandler: (TopHeadlineResponse) -> Unit,
+        errorHandler: (Throwable) -> Unit,
+        query: String
+    ) {
         ApiClient.getApiService().getNewsBySearch(query)
             //membuat background thread / asnycronus
             .subscribeOn(Schedulers.io())
@@ -23,21 +27,25 @@ class SearchViewModel(application: Application): AndroidViewModel(application) {
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
                 responseHandler(it)
-            },{
+            }, {
                 errorHandler(it)
             })
     }
 
     //untuk mendapatkan data dari parameter category
-    fun getDataCategory(responseHandler : (TopHeadlineResponse) -> Unit, errorHandler : (Throwable) -> Unit, category: String){
-        ApiClient.getApiService().getCategory(category )
+    private fun getDataCategory(
+        responseHandler: (TopHeadlineResponse) -> Unit,
+        errorHandler: (Throwable) -> Unit,
+        category: String
+    ) {
+        ApiClient.getApiService().getCategory(category)
             //membuat background thread / asnycronus
             .subscribeOn(Schedulers.io())
             //menentukan dimana thread akan dibuat
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
                 responseHandler(it)
-            },{
+            }, {
                 errorHandler(it)
             })
     }
@@ -51,7 +59,7 @@ class SearchViewModel(application: Application): AndroidViewModel(application) {
             }, {
                 isLoading.value = false
                 isError.value = it
-            },it)
+            }, it)
         }
     }
 

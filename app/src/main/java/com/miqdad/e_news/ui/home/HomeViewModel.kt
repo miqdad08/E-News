@@ -13,7 +13,11 @@ class HomeViewModel : ViewModel() {
     var isError = MutableLiveData<Throwable>()
     var topHeadlineResponse = MutableLiveData<TopHeadlineResponse>()
 
-    fun getData(responseHandler : (TopHeadlineResponse) -> Unit, errorHandler : (Throwable) -> Unit, news : String){
+    private fun getData(
+        responseHandler: (TopHeadlineResponse) -> Unit,
+        errorHandler: (Throwable) -> Unit,
+        news: String
+    ) {
         ApiClient.getApiService().getTopHeadlineNews(news)
             //membuat background thread / asnycronus
             .subscribeOn(Schedulers.io())
@@ -21,12 +25,12 @@ class HomeViewModel : ViewModel() {
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
                 responseHandler(it)
-            },{
+            }, {
                 errorHandler(it)
             })
     }
 
-    fun getTopHeadlineNews(news: String){
+    fun getTopHeadlineNews(news: String) {
         isLoading.value = true
         getData({
             isLoading.value = false
@@ -34,6 +38,6 @@ class HomeViewModel : ViewModel() {
         }, {
             isLoading.value = true
             isError.value = it
-        },news)
+        }, news)
     }
 }
