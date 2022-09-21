@@ -7,7 +7,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.Priority
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
-import com.miqdad.e_news.data.network.ArticlesItem
+import com.miqdad.e_news.data.ArticlesItem
 import com.miqdad.e_news.databinding.RowItemCategoriesBinding
 import com.miqdad.e_news.helper.HelperFunction
 import com.miqdad.e_news.ui.OnItemClickCallback
@@ -35,12 +35,10 @@ class SearchAdapter(var customItemCount: Int? = null): RecyclerView.Adapter<Sear
         RowItemCategoriesBinding.inflate(LayoutInflater.from(parent.context), parent, false)
     )
 
-    private val limit = 10
-
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val data = listNews[position]
         holder.binding.apply {
-            var date = HelperFunction().dateFormatter(data.publishedAt!!)
+            val date = HelperFunction().dateFormatter(data.publishedAt!!)
             tvTitle.text = data.title
             tvDate.text = date
             tvAuthor.text = "By ${data.author}"

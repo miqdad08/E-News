@@ -19,7 +19,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.miqdad.e_news.R
-import com.miqdad.e_news.data.network.ArticlesItem
+import com.miqdad.e_news.data.ArticlesItem
 import com.miqdad.e_news.databinding.FragmentHomeBinding
 import com.miqdad.e_news.ui.OnItemClickCallback
 import com.miqdad.e_news.ui.detail.DetailActivity
@@ -62,7 +62,7 @@ class HomeFragment : Fragment() {
             adapter = mAdapter
             LinearSnapHelper().attachToRecyclerView(this)
             mAdapter.setData(data)
-            mAdapter.setOnItemClickCallback(object : OnItemClickCallback{
+            mAdapter.setOnItemClickCallback(object : OnItemClickCallback {
                 override fun onItemClicked(data: ArticlesItem) {
                     startActivity(
                         Intent(context, DetailActivity::class.java)
@@ -85,18 +85,6 @@ class HomeFragment : Fragment() {
                     )
                 }
             })
-        }
-    }
-
-    private fun showError(isError: Throwable?) {
-        Log.e("MainActivity", "Error get data ${isError.toString()}")
-    }
-
-    private fun showLoading(isLoading: Boolean?) {
-        if (isLoading == true) {
-            binding.progressMain.visibility = View.VISIBLE
-        } else {
-            binding.progressMain.visibility = View.INVISIBLE
         }
     }
 
@@ -133,11 +121,11 @@ class HomeFragment : Fragment() {
         builder.setTitle("Exit")
         builder.setMessage("Are you sure to exit?")
         builder.setIcon(R.drawable.ic_warning_foreground)
-        builder.setPositiveButton("Yes") { dialog, which ->
+        builder.setPositiveButton("Yes") { _, _ ->
             finish()
         }
-        builder.setNegativeButton("No") { dialog, which -> }
-        builder.setNeutralButton("Cancel") { dialog, which -> }
+        builder.setNegativeButton("No") { _, _ -> }
+        builder.setNeutralButton("Cancel") { _, _ -> }
         val dialog: AlertDialog = builder.create()
         dialog.show()
     }

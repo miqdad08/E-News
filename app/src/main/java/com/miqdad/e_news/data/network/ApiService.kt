@@ -1,8 +1,8 @@
 package com.miqdad.e_news.data.network
 
 import com.miqdad.e_news.BuildConfig.API_KEY
+import com.miqdad.e_news.data.TopHeadlineResponse
 import io.reactivex.rxjava3.core.Flowable
-import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query
 

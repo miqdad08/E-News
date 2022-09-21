@@ -7,7 +7,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.Priority
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.bumptech.glide.request.RequestOptions
-import com.miqdad.e_news.data.network.ArticlesItem
+import com.miqdad.e_news.data.ArticlesItem
 import com.miqdad.e_news.databinding.RowItemNewsBinding
 import com.miqdad.e_news.helper.HelperFunction
 import com.miqdad.e_news.ui.OnItemClickCallback
@@ -23,7 +23,7 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.MyViewHolder>() {
 
     private var onItemClickCallback: OnItemClickCallback? = null
 
-    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback){
+    fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
         this.onItemClickCallback = onItemClickCallback
     }
 
@@ -37,7 +37,7 @@ class NewsAdapter : RecyclerView.Adapter<NewsAdapter.MyViewHolder>() {
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val data = listNews[position]
         holder.binding.apply {
-            var date = HelperFunction().dateFormatter(data.publishedAt!!)
+            val date = HelperFunction().dateFormatter(data.publishedAt!!)
             tvTitle.text = data.title
             tvTime.text = date
             tvAuthor.text = "By ${data.author}"

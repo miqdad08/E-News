@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -30,12 +29,12 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cv_img_detail"
-                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
+                android:layout_margin="16dp"
+                android:layout_marginTop="10dp"
                 app:cardCornerRadius="20dp"
                 app:cardElevation="4dp"
-                android:layout_margin="16dp"
                 app:layout_constraintBottom_toTopOf="@+id/tv_detail_title"
                 app:layout_constraintTop_toBottomOf="@+id/xeora_dzikir">
 
@@ -52,8 +51,8 @@
                 android:id="@+id/tv_detail_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
                 android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginEnd="10dp"
                 android:textColor="@color/black"
                 android:textSize="25sp"
@@ -71,12 +70,12 @@
                     android:id="@+id/tv_date_detail"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:layout_marginTop="8dp"
                     android:layout_marginStart="10dp"
+                    android:layout_marginTop="8dp"
                     android:layout_marginEnd="10dp"
                     android:textAllCaps="false"
-                    android:textStyle="normal"
                     android:textColor="@color/gray_text"
+                    android:textStyle="normal"
                     app:layout_constraintStart_toStartOf="parent" />
 
                 <TextView
@@ -106,9 +105,9 @@
                 android:id="@+id/tv_desc_detail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="10dp"
                 android:layout_marginStart="10dp"
                 android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
                 android:autoSizeMaxTextSize="16sp"
                 android:textColor="@color/black"
                 android:textSize="20sp" />

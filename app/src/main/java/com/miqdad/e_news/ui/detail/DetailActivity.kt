@@ -3,9 +3,7 @@ package com.miqdad.e_news.ui.detail
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.bumptech.glide.Glide
-import com.miqdad.e_news.R
-import com.miqdad.e_news.data.network.ArticlesItem
-import com.miqdad.e_news.data.network.TopHeadlineResponse
+import com.miqdad.e_news.data.ArticlesItem
 import com.miqdad.e_news.databinding.ActivityDetailBinding
 import com.miqdad.e_news.helper.HelperFunction
 
@@ -31,9 +29,9 @@ class DetailActivity : AppCompatActivity() {
     private fun initView() {
         val data = intent.getParcelableExtra<ArticlesItem>("EXTRA_DATA")
         binding.apply {
-            var date = HelperFunction().dateFormatter(data?.publishedAt!!)
+            val date = HelperFunction().dateFormatter(data?.publishedAt!!)
             Glide.with(this@DetailActivity)
-                .load(data?.urlToImage)
+                .load(data.urlToImage)
                 .into(imgDetail)
             if (data != null) {
                 tvDetailTitle.text = data.title
@@ -44,7 +42,6 @@ class DetailActivity : AppCompatActivity() {
 
         }
     }
-
 
     override fun onSupportNavigateUp(): Boolean {
         onBackPressed()
