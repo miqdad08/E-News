@@ -24,9 +24,7 @@ class SearchFragment : Fragment() {
     private val binding get() = _binding!!
 
     private var _viewModel: SearchViewModel? = null
-
     private val viewModel get() = _viewModel as SearchViewModel
-    private var isLoading: Boolean? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -76,7 +74,7 @@ class SearchFragment : Fragment() {
         }
 
         fun addFragment(title: String) {
-            var bundle = Bundle()
+            val bundle = Bundle()
             val fragment = ListFragment()
             bundle.putString("key", title)
             fragment.arguments = bundle
