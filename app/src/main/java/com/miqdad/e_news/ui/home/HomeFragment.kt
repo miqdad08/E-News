@@ -17,6 +17,7 @@ import androidx.core.app.NotificationManagerCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.LinearSnapHelper
+import androidx.recyclerview.widget.PagerSnapHelper
 import androidx.recyclerview.widget.RecyclerView
 import com.miqdad.e_news.R
 import com.miqdad.e_news.data.ArticlesItem
@@ -25,6 +26,7 @@ import com.miqdad.e_news.ui.OnItemClickCallback
 import com.miqdad.e_news.ui.detail.DetailActivity
 
 class HomeFragment : Fragment() {
+
     private val channelId = "channel_01"
     private val notificationId = 101
 
@@ -60,7 +62,7 @@ class HomeFragment : Fragment() {
             val mAdapter = SliderAdapter()
             layoutManager = CenterItemLayoutManager(context, RecyclerView.HORIZONTAL, false)
             adapter = mAdapter
-            LinearSnapHelper().attachToRecyclerView(this)
+            PagerSnapHelper().attachToRecyclerView(this)
             mAdapter.setData(data)
             mAdapter.setOnItemClickCallback(object : OnItemClickCallback {
                 override fun onItemClicked(data: ArticlesItem) {
