@@ -29,8 +29,19 @@
         <entry key="..\:/Users/Muhammad Azzam/fromalif/E-News/app/src/main/res/layout/fragment_home.xml" value="0.13333333333333333" />
         <entry key="..\:/Users/Muhammad Azzam/fromalif/E-News/app/src/main/res/layout/fragment_search.xml" value="0.22" />
         <entry key="..\:/Users/Muhammad Azzam/fromalif/E-News/app/src/main/res/layout/row_item_news.xml" value="0.1388888888888889" />
+        <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.15" />
+        <entry key="app/src/main/res/drawable/bg_splash_screen.xml" value="0.15" />
+        <entry key="app/src/main/res/drawable/btn_back.xml" value="0.15" />
+        <entry key="app/src/main/res/drawable/home_ic_selector.xml" value="0.15" />
+        <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.15" />
+        <entry key="app/src/main/res/drawable/ic_logo_background.xml" value="0.15" />
+        <entry key="app/src/main/res/drawable/ic_warning_background.xml" value="0.15" />
+        <entry key="app/src/main/res/drawable/ic_warning_foreground.xml" value="0.15" />
+        <entry key="app/src/main/res/drawable/search_ic_selector.xml" value="0.15" />
         <entry key="app/src/main/res/drawable/searchview_bg.xml" value="0.1575" />
+        <entry key="app/src/main/res/drawable/shape_tab_indicator.xml" value="0.15" />
         <entry key="app/src/main/res/drawable/tab_corners_bg.xml" value="0.1575" />
+        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.16977800201816348" />
         <entry key="app/src/main/res/layout/fragment_categories.xml" value="0.35052083333333334" />
         <entry key="app/src/main/res/layout/fragment_detail.xml" value="0.35052083333333334" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.33" />
