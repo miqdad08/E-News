@@ -24,13 +24,14 @@ class MainActivity : AppCompatActivity() {
         binding.swipeRefreshLayout.setOnRefreshListener {
             recreate()
         }
-
+// value of navView to bind
         val navView: BottomNavigationView = binding.navView
-
+// value for navController to declare
         val navController = findNavController(R.id.nav_host_fragment_activity_main)
-
+        // val for appbarconfigure
         val appBarConfiguration = AppBarConfiguration(
             setOf(
+                // set of home fragment and search fragment
                 R.id.home_fragment,
                 R.id.search_fragment
             )
